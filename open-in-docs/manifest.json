@@ -1,0 +1,15 @@
+{
+	// Required
+	"name" : "Open In Docs",
+	"version" : "1.0",
+	// Recommended
+	"icons" : {
+		"64" : "bent-icon.png"
+	},
+	// Other
+	"background_page" : "google-viewer.html",
+	"permissions" : [
+	    "contextMenus",
+		"tabs"
+	]
+}

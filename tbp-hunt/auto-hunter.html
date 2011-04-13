@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<script>
+        var minHealth = 500;
+		var page = 0;
+		var stop = true;
+
+		function __tbpHunt() {
+			this.running = false;
+			this.state = "";
+		
+			this.toggle = (function () {
+				if (this.running) {
+					this.running = false;
+				} else {
+					this.running = true;
+				}
+			});
+		
+			this.showState = (function () {
+				chrome.tabs.executeScript(null,
+					{code : "showState(" + this.running + ", '" + this.state + "');"});
+			});
+		}
+		var tbpHunt = new __tbpHunt();
+
+		function doAction() {
+			if (tbpHunt.health < tbpHunt.minHealth) {
+				tbpHunt.running = false;
+				tbpHunt.showState();
+				return;
+			}
+			if (tbpHunt.state == "fight") {
+    	        page = 0;
+				chrome.tabs.executeScript(null,
+					 {code : "location.href = 'michelle.php?baction=fight';"});
+			} else {
+		    	if (page == 0) {
+					chrome.tabs.executeScript(null,
+					 	{code : "document.forms[0][0].click()"});
+					page = 1;
+				} else {
+					chrome.tabs.executeScript(null,
+					 	{code : "document.forms[0][1].click()"});
+					page = 0;
+				}
+			}
+	   	}
+
+        chrome.extension.onRequest.addListener(
+		    function(obj, sender, sendResponse) {
+				if (obj.state) {
+					tbpHunt.state = obj.state;
+				}
+				if (obj.health) {
+					tbpHunt.heath = obj.health;
+					tbpHunt.minHealth = obj.min_health;
+				}
+				if (obj.action == "toggle") {
+					tbpHunt.toggle();
+				}
+				tbpHunt.showState();
+				if (tbpHunt.running) {
+					doAction();
+					tbpHunt.running = false;
+				}
+			}
+        );
+		</script>
+	</head>
+</html>

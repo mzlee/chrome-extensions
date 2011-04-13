@@ -1,0 +1,29 @@
+{
+	// Required
+	"name" : "Text/Plain",
+	"version" : "1.0",
+	// Recommended
+	"description" : "View a page with mime-type text/plain",
+	"icons" : {
+		"16" : "icon.png"
+	},
+	"chrome_url_overrides" : {
+		"bookmarks" : "test.html"
+	},
+	// Actions
+	"page_action" : {
+		"default_icon": "icon.png"
+	},
+	// Other
+	// "omnibox" : { "keyword" : "src" },
+	"content_scripts": [
+		{
+			"matches" : ["http://*/*.py"],
+			"css" : ["python.css"],
+			"js" : ["python.js"]
+		}
+	],
+	"permissions" : [
+		"tabs"
+	]
+}

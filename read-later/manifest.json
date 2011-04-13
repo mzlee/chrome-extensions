@@ -1,0 +1,20 @@
+{
+	// Required
+	"name" : "Read Later",
+	"version" : "1.0",
+	// Recommended
+	"description" : "View a page with mime-type text/plain",
+	"icons" : {
+		"64" : "instapaper_icon.png"
+	},
+	// Actions
+	"browser_action" : {
+		"default_icon" : "instapaper_icon.png"
+	},
+	// Other
+	"background_page" : "read-later.html",
+	"permissions" : [
+		"tabs",
+		"http://*/*"
+	]
+}
