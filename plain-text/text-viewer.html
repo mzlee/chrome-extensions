@@ -1,0 +1,45 @@
+<html>
+  <head>
+	<script type="text/javascript">
+	  function viewAsText(data, tab) {
+	    var file = data.linkUrl;
+	    getText(file);
+	  }
+
+	  function getText(url) {
+	    var http = new XMLHttpRequest();
+	    http.open("get", url);
+	    http.overrideMimeType("text/plain");
+	    http.onreadystatechange = (function () {
+	      if (http.readyState == 4) {
+	        displayText(http.responseText);
+	      }
+	    });
+	    http.send(null);
+	  }
+
+	  function displayText(text) {
+	    tArray = text.split('\n');
+        chrome.tabs.executeScript(null, {
+	      code : "document.getElementById('preId').innerText = '';"});
+	    for (var i in tArray) {
+	      chrome.tabs.executeScript(null, {
+	        code : "document.getElementById('preId').innerText += '" + tArray[i] + "\\n';"});
+	    }
+	    chrome.tabs.executeScript(null, {
+	      code : "tlb = document.getElementById('textLightBox'); \
+	              tlb.style.display = 'inline'; \
+	              tlb.style.position = 'absolute'; \
+                  tlb.style.right = '50px'; \
+                  tlb.style.top = '50px'"
+	    });
+	  }
+
+	  var menuId = chrome.contextMenus.create({
+	    "title" : "View as text",
+	    "contexts" : ["link"],
+	    "onclick" : viewAsText
+	  });
+	</script>
+  </head>
+</html>
