@@ -1,0 +1,7 @@
+Adds an Open in Docs context menu to links.
+
+TODO:
+		Add an icon
+		Smarter parsing of the url
+		Figure out if google doc viewer has special context parameters
+		Expand shortened URLs
