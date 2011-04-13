@@ -5,7 +5,7 @@
 	// Recommended
 	"description" : "View a page with mime-type text/plain",
 	"icons" : {
-		"16" : "icon.png"
+		"64" : "bent-icon.png"
 	},
 	// Other
 	"background_page" : "text-viewer.html",
