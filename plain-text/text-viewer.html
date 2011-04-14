@@ -29,9 +29,12 @@
 	    chrome.tabs.executeScript(null, {
 	      code : "tlb = document.getElementById('textLightBox'); \
 	              tlb.style.display = 'inline'; \
-	              tlb.style.position = 'absolute'; \
+	              tlb.style.position = 'fixed'; \
+	              tlb.style.overflow = 'auto'; \
+	              tlb.style.border = '0 #000 solid'; \
                   tlb.style.right = '50px'; \
-                  tlb.style.top = '50px'"
+                  tlb.style.top = '50px'; \
+                  tlb.style.height = '500px';"
 	    });
 	  }
 
