@@ -1,26 +1,24 @@
 {
 	// Required
 	"name" : "Grapher",
-	"version" : "1.0",
+	"version" : "0.1",
 	// Recommended
 	"description" : "Try to convert a table into a visual graph",
 	"icons" : {
-		"128" : "grapher-128.png"
-		"64" : "grapher-64.png"
-		"32" : "grapher-32.png"
+		"128" : "grapher-128.png",
+		"64" : "grapher-64.png",
+		"32" : "grapher-32.png",
 		"16" : "grapher-16.png"
 	},
 	// Other
 	"background_page" : "grapher.html",
-	"content_scripts" : [
-	  {
-	    "matches" : ["http://*/*"],
+	"content_scripts" : [{
+		"matches" : ["http://*/*"],
 		"js" : ["grapher.js"]
-	  }
-	],
+	}],
 	"permissions" : [
-	    "http://*/*",
-	    "contextMenus",
+		"http://*/*",
+		"contextMenus",
 		"tabs"
 	]
 }
