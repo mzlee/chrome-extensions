@@ -2,14 +2,16 @@
 	// Required
 	"name" : "Read Later",
 	"version" : "1.0",
-	// Recommended
-	"description" : "View a page with mime-type text/plain",
+	"description" : "Replaces the instapaper bookmarklet",
 	"icons" : {
-		"64" : "instapaper_icon.png"
+		"128" : "instapaper-128.png",
+		"48" : "instapaper-48.png",
+		"16" : "instapaper-16.png"
 	},
 	// Actions
 	"browser_action" : {
-		"default_icon" : "instapaper_icon.png"
+		"default_icon" : "instapaper-16.png",
+		"default_title" : "Save to instapaper"
 	},
 	// Other
 	"background_page" : "read-later.html",
