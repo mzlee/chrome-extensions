@@ -15,6 +15,7 @@
 	},
 	// Other
 	"background_page" : "read-later.html",
+	"options_page" : "read-later.options.html",
 	"permissions" : [
 		"tabs",
 		"http://*/*"

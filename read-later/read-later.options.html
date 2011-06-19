@@ -1,0 +1,33 @@
+<html>
+  <head><title>Read Later Options</title></head>
+  <script type="text/javascript">
+    // Saves options to localStorage.
+    function save_options() {
+      var account = document.getElementById("account-id");
+      localStorage["account-id"] = account.value;
+
+      // Update status to let user know options were saved.
+      var status = document.getElementById("status");
+      status.innerHTML = "Options Saved.";
+      setTimeout(function() {
+        status.innerHTML = "";
+      }, 750);
+    }
+
+    // Restores select box state to saved value from localStorage.
+    function restore_options() {
+      var cur_id = localStorage["account-id"];
+      if (!cur_id) {
+        return;
+      }
+      var account = document.getElementById("account-id");
+      account.value = cur_id;
+    }
+  </script>
+  <body onload="restore_options()">
+    <h1>Instapaper Account Id</h1>
+    <input type="text" id="account-id" value=""/><br />
+    <button onclick="save_options()">Save</button>
+    <span id="status"></span>
+  </body>
+</html>
