@@ -6,8 +6,7 @@
 	"description" : "Try to convert a table into a visual graph",
 	"icons" : {
 		"128" : "grapher-128.png",
-		"64" : "grapher-64.png",
-		"32" : "grapher-32.png",
+		"48" : "grapher-48.png",
 		"16" : "grapher-16.png"
 	},
 	// Other
