@@ -1,15 +1,19 @@
 {
-	// Required
 	"name" : "Open In Docs",
-	"version" : "1.0",
+	"version" : "1.1",
+
 	// Recommended
 	"icons" : {
-		"64" : "bent-icon.png"
+		"48" : "google-drive.png",
+		"128" : "google-drive.png"
 	},
 	// Other
-	"background_page" : "google-viewer.html",
+	"background" : {
+		"scripts": ["viewer.js"]
+	},
 	"permissions" : [
 	    "contextMenus",
 		"tabs"
-	]
+	],
+	"manifest_version": 2
 }
