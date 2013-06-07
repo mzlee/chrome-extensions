@@ -1,12 +1,12 @@
 <html>
-	<head>
-		<script>
-		chrome.browserAction.onClicked.addListener(
-			function(tab) {
-				chrome.tabs.executeScript(null,
-					{code : "var d = document,z = d.createElement('scr' + 'ipt'),b = d.body,l = d.location;try {if (!b) throw (0);d.title = '(Saving...) ' + d.title;z.setAttribute('src', l.protocol + '//www.instapaper.com/j/gxtANyq1fjl3?u=' + encodeURIComponent(l.href) + '&t=' + (new Date().getTime()));b.appendChild(z);} catch (e) {alert('Please wait until the page has loaded.');}"});
-			}
-		);
-		</script>
-	</head>
+  <head>
+    <script>
+      chrome.browserAction.onClicked.addListener(
+      function(tab) {
+      chrome.tabs.executeScript(null,
+      {code : "var d = document,z = d.createElement('scr' + 'ipt'),b = d.body,l = d.location;try {if (!b) throw (0);d.title = '(Saving...) ' + d.title;z.setAttribute('src', l.protocol + '//www.instapaper.com/j/gxtANyq1fjl3?u=' + encodeURIComponent(l.href) + '&t=' + (new Date().getTime()));b.appendChild(z);} catch (e) {alert('Please wait until the page has loaded.');}"});
+      }
+      );
+    </script>
+  </head>
 </html>
