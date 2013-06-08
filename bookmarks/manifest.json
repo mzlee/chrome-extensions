@@ -1,0 +1,27 @@
+{
+  "name": "Short Term Bookmark",
+  "description": "Images for short-term bookmarks",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "bookmarks",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "icons" : {
+    "48" : "bookmarks.png",
+    "128" : "bookmarks.png"
+  },
+  "background": {
+      // "persistent" : false,
+      "page" : "short-bookmark.html"
+  },
+  "browser_action": {
+      "default_title" : "Bookmark page",
+      "default_icon": "bookmarks.png"
+  },
+  "chrome_url_overrides" : {
+      "bookmarks" : "bookmarks.html"
+  },
+  "manifest_version": 2
+}
