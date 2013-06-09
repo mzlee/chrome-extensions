@@ -10,13 +10,13 @@ function hashCode(str) {
     } else {
         hash = str | 0;
     }
-    console.log("Hashed " + str + " to " + hash);
+    // console.log("Hashed " + str + " to " + hash);
     return hash;
 }
 
 function getLocalData(objName) {
     var hc = hashCode(objName);
-    console.log("Retrieving " + objName + " -> " + hc);
+    // console.log("Retrieving " + objName + " -> " + hc);
     if (localStorage[hc] != undefined) {
         return JSON.parse(localStorage[hc]);
     }
@@ -25,7 +25,7 @@ function getLocalData(objName) {
 
 function setLocalData(objName, data) {
     var hc = hashCode(objName);
-    console.log("Storing " + objName + " " + hc);
+    // console.log("Storing " + objName + " " + hc);
     localStorage[hc] = JSON.stringify(data);
 }
 
